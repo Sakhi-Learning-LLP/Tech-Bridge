@@ -16,7 +16,7 @@
 }
 
 .sectionsNav .emptySpace {
-    width: 55%;
+    width: 40%;
     padding: 5px;
 }
 
@@ -52,8 +52,13 @@
     width: 50px;
 }
 
-.sectionsNav .currentNextExercise {
+.sectionsNav .exerciseNavigation, .sectionsNav .shareFeedback {
     width: 15%;
     border-radius: 0px;
     text-transform: none;
+}
+
+.completeExerciseAction {
+    background-color: rgb(102, 187, 106) !important;
+    color: white !important;
 }
