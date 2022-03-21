@@ -8,6 +8,8 @@ import ZoneSection from "./zone-section/zone-section";
 const ZoneRoute = (props) => {
     const params = useParams();
     const profile = params.profile, roadmap = params.roadmap, pathName = params.pathName, zoneName = params.zoneName;
+    if(window.screen.width<768)
+    return (<div>Coding is supposed to be learned through Laptop/PC. So please switch to Laptop/PC and login again.</div>)
     return (<ZoneContent lessonProgress={props.lessonProgress} updateLessonProgress={props.updateLessonProgress} mainApis={props.mainApis} roomManagementApis={props.roomManagementApis} helpApis={props.helpApis} email={props.email} userName={props.userName} profile={profile} roadmap={roadmap} pathName={pathName} zoneName={zoneName} meetingLink={props.meetingLink} feedbackApis={props.feedbackApis} />)
 }
 
@@ -317,7 +319,7 @@ class ZoneContent extends Component {
             // }
             return (
                 <div key={zoneName} className="sections">
-                    <Link to={`/${sectionsLocation.profile}/${sectionsLocation.roadmap}/${sectionsLocation.pathName}`}><Button color="primary">Back to Home</Button></Link>
+                    {/* <Link to={`/${sectionsLocation.profile}/${sectionsLocation.roadmap}/${sectionsLocation.pathName}`}><Button color="primary">Back to Home</Button></Link> */}
                     <Accordion open={activeSectionIndex} toggle={this.toggle}>
                         {zoneProgress.map((section, i) => {
                             return <AccordionItem key={i}>
